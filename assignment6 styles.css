@@ -1,0 +1,34 @@
+.main-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: tomato;
+}
+
+.sub-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  background-color: bisque;
+  border: 3px solid black;
+}
+
+.long-box {
+  width: 250px;
+  height: 60px;
+  background-color: rgb(46, 147, 151);
+  border: 3px solid white;
+  border-style: dashed;
+  margin: 20px 0px;
+}
+
+.short-box {
+  width: 60px;
+  height: 60px;
+  background-color: rgb(46, 147, 151);
+  border: 3px solid white;
+}
