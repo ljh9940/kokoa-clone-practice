@@ -9,6 +9,42 @@ body {
   flex-wrap: wrap;
 }
 
+@keyframes fadein {
+  from {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein2 {
+  from {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein3 {
+  from {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
 .both .box {
   width: 350px;
   height: 750px;
@@ -17,6 +53,14 @@ body {
   margin: 50px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
+}
+
+.both .box:first-child {
+  animation: fadein2 0.8s linear;
+}
+
+.both .box:last-child {
+  animation: fadein 0.8s linear;
 }
 
 .both {
@@ -92,11 +136,27 @@ body {
   margin: 20px 0px;
 }
 
-.left__down .left__down--contents:nth-child(2) {
-  background-color: rgba(0, 0, 0, 0.2x);
+.left__down--contents:nth-child(2) {
+  background-color: rgba(0, 0, 0, 0.2);
   padding: 0px 20px;
   border-radius: 30px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes beat {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.left__down--contents:nth-child(2) {
+  animation: beat 1s linear infinite;
 }
 
 .control__box {
@@ -109,6 +169,7 @@ body {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1);
   position: relative;
   bottom: 10px;
+  animation: fadein3 0.8s linear;
 }
 .control__box__icons {
   display: flex;
@@ -181,4 +242,36 @@ input[type="range"] {
 .right__down i {
   display: flex;
   align-items: center;
+}
+
+.no-mobile {
+  position: absolute;
+  z-index: 99;
+  height: 100vh;
+  background-color: tomato;
+  width: 100vw;
+  display: flex;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+}
+
+.no-mobile span {
+  animation: sadicon 5s linear infinite;
+}
+
+@keyframes sadicon {
+  from {
+    transform: none;
+  }
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .no-mobile {
+    display: none;
+  }
 }
